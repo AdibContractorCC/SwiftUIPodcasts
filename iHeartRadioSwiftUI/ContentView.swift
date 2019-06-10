@@ -10,7 +10,18 @@ import SwiftUI
 
 struct ContentView : View {
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                VStack {
+                    PopularPodcastsRow(podcastList: podcastDirectory.popular)
+                    Divider()
+                    FeaturedPodcastsRow(podcastList: podcastDirectory.featured)
+                    Divider()
+                    CategoriesGrid(categories: podcastDirectory.categories)
+                    }
+                    .navigationBarTitle(Text("Podcasts"), displayMode: .inline)
+            }
+        }
     }
 }
 
