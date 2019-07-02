@@ -14,7 +14,7 @@ let podcastDirectory: PodcastDirectory = load("podcast_directory.json")
 struct PodcastDirectory: Hashable, Codable {
     var popular: PodcastList
     var featured: PodcastList
-    var categories: [Category]
+    var categories: [PodcastCategory]
 }
 
 struct PodcastList: Hashable, Codable, Identifiable {
@@ -23,7 +23,7 @@ struct PodcastList: Hashable, Codable, Identifiable {
     var podcasts: [Podcast]
 }
 
-struct Category: Hashable, Codable, Identifiable {
+struct PodcastCategory: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var imageName: String {
